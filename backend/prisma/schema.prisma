@@ -20,13 +20,7 @@ model Usuario {
 model Pergunta {
   id        Int        @id @default(autoincrement())
   texto     String
-  respostas Resposta[]
+  resposta  String
   usuarios  Usuario[]
 }
 
-model Resposta {
-  id         Int      @id @default(autoincrement())
-  texto      String
-  pergunta   Pergunta @relation(fields: [perguntaId], references: [id])
-  perguntaId Int
-}
