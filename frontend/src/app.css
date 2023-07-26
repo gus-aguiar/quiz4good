@@ -1,12 +1,28 @@
-body {
-  background-color: #C8D0D2;
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 bg-slate-100 p-4;
+  }
 }
 
-.container {
+@layer components {
+  .container {
+    @apply max-w-4xl m-1;
+  }
+}
+
+/* body {
+  background-color: #C8D0D2;
+  margin: 0;
+} */
+
+/* .container {
   max-width: 900px;
   margin: 1rem 2rem;
-}
+} */
 
 .header {
   display: flex;
@@ -24,7 +40,7 @@ body {
   margin: .5rem;
 }
 
-.form-group > label {
+.form-group>label {
   color: #777;
   font-size: .75rem;
   margin-bottom: .25rem;

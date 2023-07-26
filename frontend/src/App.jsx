@@ -3,7 +3,6 @@ import FlashCardList from './FlashCardList'
 import './app.css'
 import axios from 'axios'
 
-
 function App() {
   const [flashcards, setFlashCards] = useState(SAMPLE_FLASHCARDS)
   useEffect(() => {
@@ -33,12 +32,14 @@ function App() {
   }
 
 
+
   return (
     <div className='container'>
       <FlashCardList flashcards={flashcards} />
     </div>
   );
 }
+
 
 const SAMPLE_FLASHCARDS = [
   {
