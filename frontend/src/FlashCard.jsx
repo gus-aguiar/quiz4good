@@ -14,7 +14,7 @@ export default function Flashcard({ flashcard }) {
     setHeight(Math.max(frontHeight, backHeight, 100))
   }
 
-  useEffect(setMaxHeight, [flashcard.question, flashcard.answer, flashcard.options])
+  useEffect(setMaxHeight, [flashcard.question, flashcard.answer])
   useEffect(() => {
     window.addEventListener('resize', setMaxHeight)
     return () => window.removeEventListener('resize', setMaxHeight)
@@ -28,11 +28,6 @@ export default function Flashcard({ flashcard }) {
     >
       <div className="front" ref={frontEl}>
         {flashcard.question}
-        <div className="flashcard-options">
-          {flashcard.options.map(option => {
-            return <div className="flashcard-option" key={option}>{option}</div>
-          })}
-        </div>
       </div>
       <div className="back" ref={backEl}>{flashcard.answer}</div>
     </div>
